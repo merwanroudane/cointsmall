@@ -1,0 +1,31 @@
+---
+title: "Introduction to cointsmall"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to cointsmall}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Overview
+
+The `cointsmall` package implements cointegration tests with endogenous structural breaks 
+for very small sample sizes (T < 50), following Trinh (2022).
+
+## Basic Usage
+
+```r
+library(cointsmall)
+
+# Generate data
+set.seed(123)
+T <- 50
+X <- matrix(rnorm(T * 2), ncol = 2)
+Y <- 2 + 1.5 * X[,1] + 0.8 * X[,2] + rnorm(T, sd = 0.3)
+
+# Test for cointegration
+result <- composite_cointegration_test(Y, X, max_breaks = 2)
+print(result)
+```
+
+See package documentation for more details.
