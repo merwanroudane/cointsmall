@@ -1,0 +1,31 @@
+Package: cointsmall
+Type: Package
+Title: Cointegration Testing with Structural Breaks in Very Small Samples
+Version: 0.1.0
+Authors@R: c(
+    person("Jérôme", "Trinh", role = c("aut"), 
+           comment = "Original methodology and paper"),
+    person("Merwan", "Roudane", email = "merwanroudane920@gmail.com", 
+           role = c("cre", "ctb"),
+           comment = "R package implementation"))
+Description: Implements cointegration tests with endogenous structural breaks
+    for very small sample sizes (T < 50) following Trinh (2022) 
+    <http://thema.u-cergy.fr/IMG/pdf/2022-01.pdf>. 
+    Extends the Gregory and Hansen (1996) <doi:10.1016/0304-4076(95)01751-9> 
+    test to allow up to two structural breaks with size-corrected critical 
+    values computed via surface response methodology following MacKinnon (1991, 
+    ISBN:0198283393). The package is designed for macroeconometric studies of 
+    emerging economies where data history is limited.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Depends: 
+    R (>= 3.5.0)
+Imports:
+    lmtest (>= 0.9-38)
+Suggests:
+    testthat (>= 3.0.0),
+    knitr,
+    rmarkdown
+RoxygenNote: 7.3.3
+VignetteBuilder: knitr
